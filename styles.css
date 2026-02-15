@@ -10,11 +10,12 @@ body {
     color: #333;
     line-height: 1.6;
     padding: 20px;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 header h1 {
@@ -31,24 +32,39 @@ header a:hover {
     text-decoration: underline;
 }
 
+#darkModeToggle {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #1a3c6e;
+    color: white;
+    font-weight: bold;
+}
+
+#darkModeToggle:hover {
+    opacity: 0.85;
+}
+
 section {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background-color 0.4s ease;
 }
 
 h2 {
-    color: #1a3c6e;
     margin-bottom: 10px;
     border-bottom: 2px solid #1a3c6e;
     padding-bottom: 5px;
+    color: #1a3c6e;
 }
 
 h3 {
-    margin-top: 10px;
-    color: #333;
+    margin-top: 15px;
 }
 
 ul {
@@ -82,23 +98,38 @@ ul {
         margin: auto;
     }
 
-    /* Two column layout */
-    section {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 20px;
-    }
-
-    section h2 {
-        grid-column: 1 / -1;
-    }
-
     header {
         text-align: left;
-        margin-bottom: 40px;
     }
 
     header h1 {
         font-size: 3rem;
     }
+
+    section {
+        padding: 30px;
+    }
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode section {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+body.dark-mode h2 {
+    border-bottom: 2px solid #4da6ff;
+    color: #4da6ff;
+}
+
+body.dark-mode header h1 {
+    color: #4da6ff;
+}
+
+body.dark-mode a {
+    color: #66b2ff;
 }
